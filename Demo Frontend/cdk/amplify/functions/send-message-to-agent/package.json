@@ -1,0 +1,16 @@
+{
+  "name": "send-message-to-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-agentcore": "^3.600.0",
+    "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/client-lambda": "^3.600.0",
+    "@aws-sdk/lib-dynamodb": "^3.600.0",
+    "@aws-sdk/util-dynamodb": "^3.600.0",
+    "@smithy/signature-v4": "^3.0.0",
+    "@smithy/protocol-http": "^4.0.0",
+    "@aws-sdk/credential-provider-node": "^3.600.0",
+    "@aws-crypto/sha256-js": "^5.0.0"
+  }
+}

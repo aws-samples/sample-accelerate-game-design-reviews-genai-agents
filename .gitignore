@@ -1,0 +1,40 @@
+# Environment variables
+.env
+.env.local
+
+# AWS credentials
+.aws/credentials
+.aws/config
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+jupyter_env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.kiro/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Bedrock AgentCore
+.bedrock_agentcore.yaml
+.dockerignore
+Dockerfile

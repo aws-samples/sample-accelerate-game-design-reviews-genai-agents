@@ -1,0 +1,11 @@
+{
+  "name": "start-agent-session",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-agentcore": "^3.929.0",
+    "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/lib-dynamodb": "^3.600.0",
+    "@aws-sdk/util-dynamodb": "^3.600.0"
+  }
+}

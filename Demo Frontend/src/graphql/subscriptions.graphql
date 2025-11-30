@@ -1,0 +1,21 @@
+# Real-time Subscriptions
+subscription OnMessageCreated($sessionID: ID!) {
+  onMessageCreated(sessionID: $sessionID) {
+    id
+    sessionID
+    sender
+    content
+    timestamp
+    type
+  }
+}
+
+subscription OnSessionStatusChanged($projectID: ID!) {
+  onSessionStatusChanged(projectID: $projectID) {
+    id
+    projectID
+    startedAt
+    endedAt
+    status
+  }
+}

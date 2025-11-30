@@ -1,0 +1,93 @@
+# Project Queries
+query ListProjects {
+  listProjects {
+    items {
+      id
+      name
+      description
+      status
+      createdAt
+      updatedAt
+      collaborators
+      document {
+        id
+        title
+        type
+        uploadedAt
+      }
+    }
+  }
+}
+
+query GetProject($id: ID!) {
+  getProject(id: $id) {
+    id
+    name
+    description
+    status
+    createdAt
+    updatedAt
+    collaborators
+    document {
+      id
+      title
+      content
+      type
+      uploadedAt
+    }
+    sessions {
+      items {
+        id
+        startedAt
+        endedAt
+        status
+        summary {
+          id
+          findings
+          recommendations
+          keyInsights
+          conversationHighlights
+        }
+      }
+    }
+  }
+}
+
+# Session Queries
+query GetAgentSession($id: ID!) {
+  getAgentSession(id: $id) {
+    id
+    projectID
+    startedAt
+    endedAt
+    status
+    messages {
+      items {
+        id
+        sender
+        content
+        timestamp
+        type
+      }
+    }
+    summary {
+      id
+      findings
+      recommendations
+      keyInsights
+      conversationHighlights
+    }
+  }
+}
+
+query ListMessagesBySession($sessionID: ID!) {
+  listMessages(filter: { sessionID: { eq: $sessionID } }) {
+    items {
+      id
+      sender
+      content
+      timestamp
+      type
+    }
+  }
+}

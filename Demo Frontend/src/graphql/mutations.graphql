@@ -1,0 +1,111 @@
+# Project Mutations
+mutation CreateProject($input: CreateProjectInput!) {
+  createProject(input: $input) {
+    id
+    name
+    description
+    status
+    createdAt
+    updatedAt
+    collaborators
+  }
+}
+
+mutation UpdateProject($input: UpdateProjectInput!) {
+  updateProject(input: $input) {
+    id
+    name
+    description
+    status
+    updatedAt
+  }
+}
+
+mutation DeleteProject($input: DeleteProjectInput!) {
+  deleteProject(input: $input) {
+    id
+  }
+}
+
+# Document Mutations
+mutation CreateDocument($input: CreateDocumentInput!) {
+  createDocument(input: $input) {
+    id
+    title
+    content
+    type
+    uploadedAt
+    projectID
+  }
+}
+
+# Session Mutations
+mutation CreateAgentSession($input: CreateAgentSessionInput!) {
+  createAgentSession(input: $input) {
+    id
+    projectID
+    startedAt
+    status
+  }
+}
+
+mutation UpdateAgentSession($input: UpdateAgentSessionInput!) {
+  updateAgentSession(input: $input) {
+    id
+    endedAt
+    status
+  }
+}
+
+# Message Mutations
+mutation CreateMessage($input: CreateMessageInput!) {
+  createMessage(input: $input) {
+    id
+    sessionID
+    sender
+    content
+    timestamp
+    type
+  }
+}
+
+# Summary Mutations
+mutation CreateSessionSummary($input: CreateSessionSummaryInput!) {
+  createSessionSummary(input: $input) {
+    id
+    findings
+    recommendations
+    keyInsights
+    conversationHighlights
+    agentSessionID
+  }
+}
+
+# Custom Agent Mutations
+mutation StartAgentSession($projectId: ID!) {
+  startAgentSession(projectId: $projectId) {
+    id
+    projectID
+    startedAt
+    status
+  }
+}
+
+mutation SendMessageToAgent($sessionId: ID!, $content: String!) {
+  sendMessageToAgent(sessionId: $sessionId, content: $content) {
+    id
+    sessionID
+    sender
+    content
+    timestamp
+    type
+  }
+}
+
+mutation EndAgentSession($sessionId: ID!) {
+  endAgentSession(sessionId: $sessionId) {
+    id
+    endedAt
+    status
+  }
+}

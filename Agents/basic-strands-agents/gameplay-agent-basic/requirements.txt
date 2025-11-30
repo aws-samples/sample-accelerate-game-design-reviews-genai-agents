@@ -1,0 +1,9 @@
+strands-agents
+strands-agents-tools
+uv
+uvicorn
+boto3
+bedrock-agentcore
+bedrock-agentcore-starter-toolkit
+aws-opentelemetry-distro
+python-dotenv
